@@ -264,8 +264,8 @@ services:
     volumes:
       - bloodhound_data:/data
     ports:
-      - "${NEO4J_WEB_PORT}:7474"
-      - "${NEO4J_DB_PORT}:7687"
+      - "7474:7474"
+      - "7687:7687"
     environment:
       - NEO4J_AUTH=${NEO4J_AUTH}
       - NEO4J_dbms_memory_heap_initial__size=${NEO4J_dbms_memory_heap_initial__size}
@@ -303,7 +303,7 @@ services:
       - POSTGRES_DATABASE=${POSTGRES_DATABASE}
       - NEO4J_AUTH=${NEO4J_AUTH}
     ports:
-      - ${BLOODHOUND_PORT}:8080
+      - 8080:8080
     volumes:
       - ./mounts/bloodhound-config/bloodhound.config.json:/bloodhound.config.json:ro
     depends_on:
