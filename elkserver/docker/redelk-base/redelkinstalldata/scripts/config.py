@@ -80,18 +80,37 @@ if "alarms" in data:
 # -- Enrichments modules
 # pylint: disable=invalid-name
 enrich = {
-    "enrich_csbeacon": {"enabled": True, "interval": 300},
-    "enrich_stage1": {"enabled": True, "interval": 300},
-    "enrich_greynoise": {
-        "enabled": True,
-        "interval": 310,
-        "cache": 86400,  # Only query for the same IP hit every 24h by default
-        # Greynoise Community API Key - Default RedELK key if none provided
-        "api_key": "cEwJeLyDkNSXzabKNvzJSzZjZW0xEJYSYvf2nfhmmaXQHfCA8bJb49AvI3DF5Tlx",
+    'enrich_csbeacon': {
+        'enabled': True,
+        'interval': 300
     },
-    "enrich_tor": {"enabled": True, "interval": 320, "cache": 3600},
-    "enrich_iplists": {"enabled": True, "interval": 330},
-    "enrich_synciplists": {"enabled": True, "interval": 360},
+    'enrich_stage1': {
+        'enabled': True,
+        'interval': 300
+    },
+    'enrich_sliver': {
+        'enabled': True,
+        'interval': 300
+    },
+    'enrich_greynoise': {
+        'enabled': True,
+        'interval': 310,
+        'cache': 86400,  # Only query for the same IP hit every 24h by default
+        'api_key': 'cEwJeLyDkNSXzabKNvzJSzZjZW0xEJYSYvf2nfhmmaXQHfCA8bJb49AvI3DF5Tlx'  # Greynoise Community API Key - Default RedELK key if none provided
+    },
+    'enrich_tor': {
+        'enabled': True,
+        'interval': 320,
+        'cache': 3600
+    },
+    'enrich_iplists': {
+        'enabled': True,
+        'interval': 330
+    },
+    'enrich_synciplists': {
+        'enabled': True,
+        'interval': 360
+    },
     "enrich_syncdomainslists": {"enabled": True, "interval": 355},
     "enrich_domainscategorization": {
         "enabled": True,
@@ -100,7 +119,7 @@ enrich = {
         "ibm_basic_auth": "",
         # Virustotal API
         "vt_api_key": "",
-    },
+    }
 }
 if "enrich" in data:
     for e in data["enrich"]:
