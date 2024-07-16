@@ -81,7 +81,7 @@ if "alarms" in data:
 # pylint: disable=invalid-name
 enrich = {
     'enrich_csbeacon': {
-        'enabled': True,
+        'enabled': False,
         'interval': 300
     },
     'enrich_stage1': {
