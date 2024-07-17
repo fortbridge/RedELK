@@ -7,6 +7,7 @@
 # Author: Outflank B.V. / Marc Smeets
 #
 
+mkdir /var/log/redelk/
 LOGFILE="/var/log/redelk/getremotelogs.log"
 
 if [ $# -lt 3 ] ; then
