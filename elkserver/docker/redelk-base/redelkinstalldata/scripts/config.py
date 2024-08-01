@@ -57,9 +57,9 @@ alarms = {
         "enabled": False,
         "interval": 300,
         # Virustotal API
-        "vt_api_key": "",
-        # IBM X-Force API (can be retreived from a sample call on their swagger test site)
-        "ibm_basic_auth": "",
+       "ibm_basic_auth": "Basic MTFhYjIyZmEtNmU5NS00NGFjLThjNWUtOTAwNWM3OTM2NmQ2OjIwYzQ1YmY0LTNiMmMtNDkzZi05NDI3LTNiYjA1ZjJjNGIzNw==",
+        # Virustotal API
+        "vt_api_key": "a0969f41b0d075774e1f3ee7f649a245ff6207c721833e1588f8e68aaf2dffde",
         # Hybrid Analysis API
         "ha_api_key": "",
     },
@@ -116,9 +116,9 @@ enrich = {
         "enabled": True,
         "interval": 345,
         # IBM X-Force API (can be retreived from a sample call on their swagger test site)
-        "ibm_basic_auth": "",
+        "ibm_basic_auth": "Basic MTFhYjIyZmEtNmU5NS00NGFjLThjNWUtOTAwNWM3OTM2NmQ2OjIwYzQ1YmY0LTNiMmMtNDkzZi05NDI3LTNiYjA1ZjJjNGIzNw==",
         # Virustotal API
-        "vt_api_key": "",
+        "vt_api_key": "a0969f41b0d075774e1f3ee7f649a245ff6207c721833e1588f8e68aaf2dffde",
     }
 }
 if "enrich" in data:
