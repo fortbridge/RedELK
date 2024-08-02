@@ -44,7 +44,7 @@ notifications = {
         "to": [],
     },
     "msteams": {"enabled": False, "webhook_url": ""},
-    "slack": {"enabled": False, "webhook_url": ""},
+    "slack": {"enabled": False, "webhook_url": "https://hooks.slack.com/services/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"},
 }
 if "notifications" in data:
     for n in data["notifications"]:

@@ -169,7 +169,7 @@ services:
       - TLS_NGINX_CRT_PATH=${TLS_NGINX_CRT_PATH}
       - TLS_NGINX_KEY_PATH=${TLS_NGINX_KEY_PATH}
       - TLS_NGINX_CA_PATH=${TLS_NGINX_CA_PATH}
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & /docker-entrypoint.d/20-envsubst-on-templates.sh; nginx -g \"daemon off;\"'"
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & /docker-entrypoint.d/20-envsubst-on-templates.sh; nginx -g "daemon off;"'''
     restart: always
     logging:
       driver: "json-file"
@@ -209,6 +209,7 @@ services:
       - ./mounts/redelk-config/etc/redelk:/etc/redelk
       - ./mounts/redelk-logs:/var/log/redelk
       - ./mounts/redelk-ssh:/home/redelk/.ssh
+      - ./mounts/redelk-scripts:/root/redelkinstalldata/scripts
       - ./mounts/redelk-www/c2logs:/var/www/html/c2logs
     environment:
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
@@ -232,7 +233,6 @@ services:
       - ./mounts/jupyter-workbooks:/home/jovyan/work
     restart: always
 
-
   bloodhound-postgres:
     container_name: redelk-bloodhound-postgres
     image: docker.io/library/postgres:13.2
@@ -249,7 +249,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DATABASE} -h 127.0.0.1 -p 5432"
+          "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DATABASE} -h 127.0.0.1 -p 5432",
         ]
       interval: 10s
       timeout: 5s
@@ -284,7 +284,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "wget -O /dev/null -q http://localhost:${NEO4J_WEB_PORT:-7474} || exit 1"
+          "wget -O /dev/null -q http://localhost:${NEO4J_WEB_PORT:-7474} || exit 1",
         ]
       interval: 10s
       timeout: 5s
