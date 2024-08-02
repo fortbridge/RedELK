@@ -30,7 +30,7 @@ info = {
     "alarmmsg": "",
     "description": "This script enriches redirtraffic documents with data from Greynoise",
     "type": "redelk_enrich",
-    "submodule": "enrich_greynoise",
+    #"submodule": "enrich_greynoise",
 }
 
 
@@ -47,7 +47,7 @@ class Module:
         self.api_key = (
             enrich[info["submodule"]]["api_key"]
             if info["submodule"] in enrich
-            else "cEwJeLyDkNSXzabKNvzJSzZjZW0xEJYSYvf2nfhmmaXQHfCA8bJb49AvI3DF5Tlx"
+            else "zniWqtQFRgbAP1Uhd38dfXOnM107Q7HKWCzbChZl1CG19v1WsKjtwMeOLhEX70gB"
         )
 
     def run(self):
